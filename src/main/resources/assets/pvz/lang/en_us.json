@@ -1,0 +1,48 @@
+{
+  "item.pvz.chlorophyll": "Chlorophyll",
+  "item.pvz.sunlight": "Sunlight",
+  "item.pvz.moonlight": "Moonlight",
+  "item.pvz.trowel": "Trowel",
+  "item.pvz.transtrowel": "Trans Trowel",
+
+  "item.pvz.peapod": "Pea Pod",
+  "item.pvz.snowpod": "Snow Pod",
+  "item.pvz.shroompod": "Shroom Pod",
+
+  "item.pvz.sunflower plant": "Sunflower Plant",
+  "item.pvz.pea shooter plant": "Pea Shooter Plant",
+  "item.pvz.snow pea plant": "Snow Pea Plant",
+  "item.pvz.repeater plant": "Repeater Plant",
+  "item.pvz.three-peater plant": "Three-Peater Plant",
+
+  "item.pvz.puff-shroom plant": "Puff-shroom Plant",
+  "item.pvz.scaredy-shroom plant": "Scaredy-shroom Plant",
+  "item.pvz.fume-shroom plant": "Fume-shroom Plant",
+  "item.pvz.moon-shroom plant": "Moon-shroom Plant",
+
+  "item.pvz.football_helmet": "Football Helmet",
+  "item.pvz.football_chest": "Football Chest Gear",
+  "item.pvz.football_legs": "Football Leggings",
+  "item.pvz.football_boots": "Football Shoes",
+  "item.pvz.flag": "Flag",
+
+
+  "block.pvz.endowedGrass": "Endowed Grass",
+  "block.pvz.darkenedGrass": "Darkened Grass",
+  "block.pvz.chlorophyllBowl": "Chlorophyll Bowl",
+  "block.pvz.greenhouse": "Greenhouse",
+
+
+  "entity.pvz.sunflower": "Sunflower",
+  "entity.pvz.peashooter": "Pea Shooter",
+  "entity.pvz.snowpea": "Snow Pea",
+  "entity.pvz.repeater": "Repeater",
+  "entity.pvz.threepeater": "Three-Peater",
+  "entity.pvz.puffshroom": "Puff-Shroom",
+  "entity.pvz.fumeshroom": "Fume-Shroom",
+  "entity.pvz.scaredyshroom": "Scaredy-Shroom",
+  "entity.pvz.moonshroom": "Moon-Shroom",
+  "entity.pvz.football": "Football Zombie",
+  "entity.pvz.flag": "Flag Zombie",
+  "entity.pvz.explorer": "Explorer Zombie"
+}
