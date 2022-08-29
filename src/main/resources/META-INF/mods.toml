@@ -2,35 +2,35 @@ modLoader="javafml"
 
 loaderVersion="[36,)"
 
-license="All rights reserved"
+license="Apache License Version 2.0"
 
-issueTrackerURL="https://github.com/KingOfTheGamesYT/DangerZone/issues"
+issueTrackerURL="https://discord.com/invite/SVjZbVb4SU"
 
 [[mods]]
-itemIcon="dangerzone:cake_sword"
+itemIcon="pvz:flag"
 
-configBackground="dangerzone:textures/blocks/egg/kyuubi_egg_ore.png"
+configBackground="pvz:textures/blocks/Sunflower.png"
 
-modId="dangerzone"
+modId="pvz"
 
-version="4.1.3"
+version="4.0.1"
 
-displayName="AdventureKraft"
+displayName="Plants Vs Zombies"
 
-displayURL="https://officialteamolympus.weebly.com/craftzone.html"
+displayURL="https://www.curseforge.com/minecraft/mc-mods/plants-vs-zombies-mod-reborn"
 
-logoFile="dangerzone.png"
+logoFile="logo.png"
 
-credits="Thanks for this mod goes to TheyCallMeDanger for making DangerZone the game"
+credits="Thanks for this mod goes to countrygamer for making the og mod"
 
-authors=["RedRoseWarrior1 aka DevMaster1015","coolGi007"]
+authors=["RedRoseWarrior1 aka DevMaster1015 for 1.16.5+","countrygamer for all versions below 1.16.5"]
 
 description='''
-Brings DangerZone to Minecraft
+Brings PVZ to Minecraft
 '''
 
 # Base Forge
-[[dependencies.dangerzone]]
+[[dependencies.pvz]]
     modId="forge"
     mandatory=true
     versionRange="[36,)"
@@ -38,17 +38,9 @@ Brings DangerZone to Minecraft
     side="BOTH"
 
 # Base Minecraft
-[[dependencies.dangerzone]]
+[[dependencies.pvz]]
     modId="minecraft"
     mandatory=true
 versionRange="[1.16.5,1.17]"
     ordering="NONE"
     side="BOTH"
-
-# Rises the limit for health, without it the mobs with above 512 health will have 512 health
-[[dependencies.dangerzone]]
-modId="attributefix"
-mandatory=false
-versionRange="[10.1.2,)"
-ordering="NONE"
-side="BOTH"
