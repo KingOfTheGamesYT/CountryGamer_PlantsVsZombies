@@ -4,6 +4,10 @@ import com.countrygamer.pvz.PvZ;
 import com.countrygamer.pvz.entities.mobs.zombies.EntityExplorerZombie;
 import com.countrygamer.pvz.entities.mobs.zombies.EntityFlagZombie;
 import com.countrygamer.pvz.entities.mobs.zombies.EntityFootballZombie;
+import com.countrygamer.pvz.items.ItemFootballBoots;
+import com.countrygamer.pvz.items.ItemFootballChest;
+import com.countrygamer.pvz.items.ItemFootballHelm;
+import com.countrygamer.pvz.items.ItemFootballLegs;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -32,4 +36,32 @@ public class RegistryHandler {
                         () -> EntityType.Builder.<EntityExplorerZombie>create(EntityExplorerZombie::new, EntityClassification.MONSTER)
                                 .size(1.0f, 0.3f)
                                 .build(new ResourceLocation(PvZ.MOD_ID, "explorer").toString()));
+
+        public static final RegistryObject<EntityType<EntityFootballZombie>> Football = ENTITIES
+                .register("football",
+                        () -> EntityType.Builder.<EntityFootballZombie>create(EntityFootballZombie::new, EntityClassification.MONSTER)
+                                .size(1.0f, 0.3f)
+                                .build(new ResourceLocation(PvZ.MOD_ID, "football").toString()));
+
+
+        public static final RegistryObject<EntityType<EntityFlagZombie>> Flag = ENTITIES
+                .register("flag",
+                        () -> EntityType.Builder.<EntityFlagZombie>create(EntityFlagZombie::new, EntityClassification.MONSTER)
+                                .size(1.0f, 0.3f)
+                                .build(new ResourceLocation(PvZ.MOD_ID, "flag").toString()));
+
+
+        //Armor
+        public static final RegistryObject<ItemFootballBoots> footballBoots = ITEMS.register("football_boots", ItemFootballBoots::new);
+        public static final RegistryObject<ItemFootballChest> footballChest = ITEMS.register("football_chest", ItemFootballChest::new);
+        public static final RegistryObject<ItemFootballHelm> footballHelm = ITEMS.register("football_helmet", ItemFootballHelm::new);
+        public static final RegistryObject<ItemFootballLegs> footballLegs = ITEMS.register("football_legs", ItemFootballLegs::new);
+
+
+
+
+
+
+
+
 }

@@ -1,22 +1,23 @@
 package com.countrygamer.pvz.entities.mobs.zombies;
 
-import net.minecraft.entity.monster.EntityZombie;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.world.World;
 
-public class EntityExplorerZombie extends EntityZombie {
+public class EntityExplorerZombie extends ZombieEntity {
 
-	public EntityExplorerZombie(World world) {
+	public EntityExplorerZombie(EntityType<EntityExplorerZombie> entityExplorerZombieEntityType, World world) {
 		super(world);
 
-		this.setCurrentItemOrArmor(4, new ItemStack(Items.leather_helmet));
-		this.setCurrentItemOrArmor(3, new ItemStack(Items.leather_chestplate));
-		this.setCurrentItemOrArmor(2, new ItemStack(Items.leather_leggings));
-		this.setCurrentItemOrArmor(1, new ItemStack(Items.leather_boots));
-		this.setCurrentItemOrArmor(0, new ItemStack(Blocks.torch));
+		this.setItemStackToSlot(EquipmentSlotType.HEAD, new ItemStack(Items.LEATHER_HELMET));
+		this.setItemStackToSlot(EquipmentSlotType.CHEST, new ItemStack(Items.LEATHER_CHESTPLATE));
+		this.setItemStackToSlot(EquipmentSlotType.LEGS, new ItemStack(Items.LEATHER_LEGGINGS));
+		this.setItemStackToSlot(EquipmentSlotType.FEET, new ItemStack(Items.LEATHER_BOOTS));
+		this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(Blocks.TORCH));
 
 	}
-
 }
