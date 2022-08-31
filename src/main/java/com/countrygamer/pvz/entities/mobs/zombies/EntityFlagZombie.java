@@ -1,17 +1,20 @@
 package com.countrygamer.pvz.entities.mobs.zombies;
 
-import net.minecraft.entity.monster.EntityZombie;
+import com.countrygamer.pvz.lib.RegistryHandler;
+import net.minecraft.entity.EntityType;
+import net.minecraft.entity.monster.ZombieEntity;
+import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
 import com.countrygamer.pvz.PvZ;
 
-public class EntityFlagZombie extends EntityZombie {
+public class EntityFlagZombie extends ZombieEntity {
 
-	public EntityFlagZombie(World world) {
+	public EntityFlagZombie(EntityType<EntityFlagZombie> entityFlagZombieEntityType, World world) {
 		super(world);
 
-		this.setCurrentItemOrArmor(0, new ItemStack(PvZ.flag));
+		this.setItemStackToSlot(EquipmentSlotType.MAINHAND, new ItemStack(RegistryHandler.flag.get()));
 	}
 	
 	/*
