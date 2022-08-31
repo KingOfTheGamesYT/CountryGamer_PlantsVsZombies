@@ -44,5 +44,9 @@
   "entity.pvz.moonshroom": "Moon-Shroom",
   "entity.pvz.football": "Football Zombie",
   "entity.pvz.flag": "Flag Zombie",
-  "entity.pvz.explorer": "Explorer Zombie"
+  "entity.pvz.explorer": "Explorer Zombie",
+
+  "item.pvz.explorer_zombie_spawn_egg": "Spawn Explorer Zombie",
+  "item.pvz.flag_zombie_spawn_egg": "Spawn Flag Zombie"
+
 }

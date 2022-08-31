@@ -4,15 +4,16 @@ import com.countrygamer.pvz.PvZ;
 import com.countrygamer.pvz.entities.mobs.zombies.EntityExplorerZombie;
 import com.countrygamer.pvz.entities.mobs.zombies.EntityFlagZombie;
 import com.countrygamer.pvz.entities.mobs.zombies.EntityFootballZombie;
-import com.countrygamer.pvz.items.ItemFootballBoots;
-import com.countrygamer.pvz.items.ItemFootballChest;
-import com.countrygamer.pvz.items.ItemFootballHelm;
-import com.countrygamer.pvz.items.ItemFootballLegs;
+import com.countrygamer.pvz.items.*;
 import net.minecraft.block.Block;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.registries.DeferredRegister;
@@ -56,9 +57,11 @@ public class RegistryHandler {
         public static final RegistryObject<ItemFootballChest> footballChest = ITEMS.register("football_chest", ItemFootballChest::new);
         public static final RegistryObject<ItemFootballHelm> footballHelm = ITEMS.register("football_helmet", ItemFootballHelm::new);
         public static final RegistryObject<ItemFootballLegs> footballLegs = ITEMS.register("football_legs", ItemFootballLegs::new);
+        public static final RegistryObject<ItemFlag> flag = ITEMS.register("flag", ItemFlag::new);
 
-
-
+        //Spawn Eggs
+        public static final RegistryObject<ExplorerZombieSpawnEggItem> EXPLORER_ZOMBIE_SPAWN_EGG = ITEMS.register("explorer_zombie_spawn_egg", ExplorerZombieSpawnEggItem::new);
+        public static final RegistryObject<FlagZombieSpawnEggItem> FLAG_ZOMBIE_SPAWN_EGG = ITEMS.register("flag_zombie_spawn_egg", FlagZombieSpawnEggItem::new);
 
 
 
