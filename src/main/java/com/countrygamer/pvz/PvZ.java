@@ -107,11 +107,6 @@ public class PvZ //implements IFuelHandler, IGuiHandler
 	public static Item specialPlants;
 	public static int[] specialPlantIDs;
 	public static Item guideBook;
-	public static Item footballHelm;
-	public static Item footballChest;
-	public static Item footballLegs;
-	public static Item footballBoots;
-	public static Item flag;
 	// ~Blocks~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	public static Block endowedGrass;
 	/*public static String endowedGrass_top_Tex = Reference.BASE_TEX + "endowedGrass_Top";
@@ -248,13 +243,6 @@ public class PvZ //implements IFuelHandler, IGuiHandler
 
 		PvZ.shroomPod = new ItemShroomPod(Reference.MOD_ID, "ShroomPod");
 		Core.addItemToTab(PvZ.shroomPod);
-
-	}
-
-
-
-		PvZ.flag = new ItemFlag(Reference.MOD_ID, "flag");
-		Core.addItemToTab(PvZ.flag);
 
 	}
 
