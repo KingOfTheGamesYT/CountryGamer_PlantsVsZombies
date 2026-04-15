@@ -13,6 +13,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
@@ -44,7 +45,6 @@ public class RegistryHandler {
                                 .size(1.0f, 0.3f)
                                 .build(new ResourceLocation(PvZ.MOD_ID, "football").toString()));
 
-
         public static final RegistryObject<EntityType<EntityFlagZombie>> Flag = ENTITIES
                 .register("flag",
                         () -> EntityType.Builder.<EntityFlagZombie>create(EntityFlagZombie::new, EntityClassification.MONSTER)
@@ -60,8 +60,10 @@ public class RegistryHandler {
         public static final RegistryObject<ItemFlag> flag = ITEMS.register("flag", ItemFlag::new);
 
         //Spawn Eggs
-        public static final RegistryObject<ExplorerZombieSpawnEggItem> EXPLORER_ZOMBIE_SPAWN_EGG = ITEMS.register("explorer_zombie_spawn_egg", ExplorerZombieSpawnEggItem::new);
-        public static final RegistryObject<FlagZombieSpawnEggItem> FLAG_ZOMBIE_SPAWN_EGG = ITEMS.register("flag_zombie_spawn_egg", FlagZombieSpawnEggItem::new);
+        public static final RegistryObject<ForgeSpawnEggItem> EXPLORER_ZOMBIE_SPAWN_EGG = ITEMS.register("explorer_zombie_spawn_egg", () -> new PVZSpawnEggItem(RegistryHandler.Explorer, 0, 0, new Item.Properties().group(DangerZone.TAB)));
+       // public static final RegistryObject<ForgeSpawnEggItem> NOTBREEBREE_SPAWN_EGG = ITEMS.register("notbreebree_spawn_egg", () -> new SpawnEgg(RegistryHandler.NOTBREEBREE, 0, 0, new Item.Properties().group(DangerZone.TAB)));
+
+        public static final RegistryObject<PVZSpawnEggItem> FLAG_ZOMBIE_SPAWN_EGG = ITEMS.register("flag_zombie_spawn_egg", () -> new PVZSpawnEggItem(RegistryHandler.Flag, 0, 0, new Item.Properties().group(PvZ.TAB)));
 
 
 
