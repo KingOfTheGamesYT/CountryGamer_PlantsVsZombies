@@ -1,37 +1,60 @@
 package com.countrygamer.pvz.items;
 
+import com.countrygamer.pvz.lib.RegistryHandler;
 import net.minecraft.block.Block;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
+
+import net.minecraft.block.Blocks;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-import com.countrygamer.core.Base.common.item.ItemBase;
 import com.countrygamer.pvz.PvZ;
 import com.countrygamer.pvz.entities.mobs.plants.EntityWalnut;
 
-public class ItemWalnut extends ItemBase {
-	public ItemWalnut(String modid, String name) {
-		super(modid, name);
+import static com.countrygamer.pvz.PvZ.darkenedGrass;
+import static com.countrygamer.pvz.PvZ.endowedGrass;
+import static net.minecraft.block.Blocks.DIRT;
+import static net.minecraft.block.Blocks.GRASS_BLOCK;
+
+public class ItemWalnut extends Item {
+	public ItemWalnut() {
+		super(new Item.Properties());
 	}
 
-	public boolean onItemUse(ItemStack itemStack, EntityPlayer player,
-			World world, int x, int y, int z, int side, float xOffset,
-			float yOffset, float zOffset) {
-		Block block = world.getBlock(x, y, z);
-		if ((world.getBlock(x, y + 1, z) == null)
-				&& ((block == Blocks.grass) || (block == Blocks.dirt)
-						|| (block == PvZ.endowedGrass) || (block == PvZ.darkenedGrass))) {
-			if ((player.capabilities.isCreativeMode)
-					|| (player.inventory.consumeInventoryItem(this))) {
-				EntityLivingBase ent = new EntityWalnut(world);
-				ent.setLocationAndAngles(x + 0.5D, y + 1, z + 0.5D, 0.0F, 0.0F);
-				if (!world.isRemote)
-					world.spawnEntityInWorld(ent);
+	@Override
+	public ActionResult<ItemStack> onItemRightClick(World world, PlayerEntity playerEntity, Hand hand) {
+		ItemStack stack = playerEntity.getHeldItem(hand);
+		BlockPos pos = playerEntity.getPosition();
+
+		// Ensuring the Block Position is correctly referenced
+		BlockPos newPos = new BlockPos(pos);
+
+		// Checking if the block is a valid type
+		if ((world.getBlockState(newPos).getBlock() == Blocks.GRASS_BLOCK ||
+				world.getBlockState(newPos).getBlock() == Blocks.DIRT ||
+				world.getBlockState(newPos).getBlock() == endowedGrass ||
+				world.getBlockState(newPos).getBlock() == darkenedGrass)) {
+
+			if (!playerEntity.abilities.isCreativeMode) {
+				stack.shrink(1);
 			}
-			return true;
+
+			// Creating and spawning the entity
+			LivingEntity ent = new EntityWalnut(RegistryHandler.WALNUT, world); // Replace with your actual entity type
+			ent.setLocationAndAngles(pos.getX() + 0.5D, pos.getY() + 1, pos.getZ() + 0.5D, 0.0F, 0.0F);
+
+			if (!world.isRemote) {
+				world.addEntity(ent);
+			}
+
+			return new ActionResult<>(ActionResultType.SUCCESS, stack);
 		}
-		return false;
+
+		return new ActionResult<>(ActionResultType.FAIL, stack);
 	}
-}
