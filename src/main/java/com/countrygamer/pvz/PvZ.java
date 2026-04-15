@@ -1,6 +1,7 @@
 package com.countrygamer.pvz;
 
 import com.countrygamer.pvz.entities.mobs.zombies.EntityExplorerZombie;
+import com.countrygamer.pvz.items.PVZSpawnEggItem;
 import com.countrygamer.pvz.lib.RegistryHandler;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -109,7 +110,7 @@ public class PvZ //implements IFuelHandler, IGuiHandler
 	public static Item guideBook;
 	// ~Blocks~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 	public static Block endowedGrass;
-	/*public static String endowedGrass_top_Tex = Reference.BASE_TEX + "endowedGrass_Top";
+	 public static String endowedGrass_top_Tex = Reference.BASE_TEX + "endowedGrass_Top";
 	public static String endowedGrass_bottom_Tex = Reference.BASE_TEX + "endowedGrass_Bottom";
 	public static String endowedGrass_side_Tex = Reference.BASE_TEX + "endowedGrass_Side";
 	public static Block darkenedGrass;
@@ -174,6 +175,8 @@ public class PvZ //implements IFuelHandler, IGuiHandler
 	private void setup(final FMLCommonSetupEvent event) {
 	}
 	private void doClientStuff(final FMLClientSetupEvent event) {
+		PVZSpawnEggItem.initSpawnEggs();
+
 	}
 
 
@@ -198,9 +201,6 @@ public class PvZ //implements IFuelHandler, IGuiHandler
 	public void doProxyThings() {
 		proxy.registerThings();
 	}
-
-	public void registerHandlers() {
-		MinecraftForge.EVENT_BUS.register(this);
 		NetworkRegistry.INSTANCE.registerGuiHandler(this, this);
 
 	}
